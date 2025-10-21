@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about us</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+   
+    <!-- Header with Logo -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-image">
+                    <!-- Replace with your actual logo image -->
+                    <img src="Assets/logo.jpeg" alt="MenzTailor Logo">
+                   
+                </div>
+                <div class="logo-text">
+                    NOHINE<span class="business-name">GH</span>
+                </div>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                 <a href="about.html">About Us</a>
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <a href="services.html">Services</a>
+                    <div class="dropdown-content">
+                        <a href="booking.html?service=Personal+Styling">Personal Styling</a>
+                        <a href="booking.html?service=Event+Styling">Event Styling</a>
+                        <a href="booking.html?service=Virtual+Styling">Virtual Styling</a>
+                        <a href="booking.html?service=Wardrobe+Makeover">Wardrobe Makeover</a>
+                    </div>
+                </div>
+                <a href="booking.html" class="btn">Book Styling</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <button id="nav-toggle" class="nav-toggle" aria-label="Menu">☰</button>
+        </div>
+    </header>
+
+<!-- About Section for Homepage -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="section-subtitle">Our Story</span>
+             
+                <ul class="about-features">
+                    <li>Custom couture and ready-to-wear collections</li>
+                    <li>Personal styling and wardrobe consulting</li>
+                    <li>Sustainable and ethically sourced materials</li>
+                    <li>Bridal and special occasion wear</li>
+                    <li>Made-to-measure garments</li>
+                    <li>Style transformation services</li>
+                    <li>Virtual and in-person consultations</li>
+                    <li>Event and occasion styling</li>
+                </ul>
+                
+                <a href="about.html" class="learn-more-btn">Learn More About Us</a>
+            </div>
+            <div class="about-image"></div>
+        </div>
+    </section>
+
+    <section class="footer-section">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-quote">The joy of dressing is an art</h2>
+                <p class="footer-subtitle">Crafting Elegance Since 1985</p>
+                <p style="color: #ccc; margin-bottom: 2rem; max-width: 500px;">
+                    At MenzTailor, we believe that clothing is more than just fabric - it's an expression of personality, 
+                    confidence, and artistry. Let us help you create your masterpiece.
+                </p>
+                
+                <div class="interactive-panels">
+                    <div class="panel-trigger" onclick="openPanel('contact')">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Contact Info</h3>
+                    </div>
+                    <div class="panel-trigger" onclick="openPanel('links')">
+                        <i class="fas fa-link"></i>
+                        <h3>Quick Links</h3>
+                    </div>
+                    <div class="panel-trigger" onclick="openPanel('social')">
+                        <i class="fas fa-share-alt"></i>
+                        <h3>Connect With Us</h3>
+                    </div>
+                </div>
+                
+               
+            </div>
+            
+            <div class="footer-right">
+                <div class="footer-image"></div>
+            </div>
+        </div>
+        
+        <!-- Contact Panel -->
+        <div class="slide-panel" id="contactPanel">
+            <button class="panel-close" onclick="closePanels()">&times;</button>
+            <h3 class="panel-title">Contact Us</h3>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Address</strong><br>
+                        71 Madison Ave 10013 New York
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Phone</strong><br>
+                        914-309701, 914-329211
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email</strong><br>
+                        reservations@laurent.com<br>
+                        office@laurent.com
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Business Hours</strong><br>
+                        Mon-Fri: 9am - 7pm<br>
+                        Sat: 10am - 5pm<br>
+                        Sun: Closed
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        
+        <!-- Links Panel -->
+        <div class="slide-panel" id="linksPanel">
+            <button class="panel-close" onclick="closePanels()">&times;</button>
+            <h3 class="panel-title">Quick Links</h3>
+            
+            <ul class="links-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our History</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Men's Tailoring</a></li>
+                <li><a href="#">Women's Fashion</a></li>
+                <li><a href="#">Alterations & Repairs</a></li>
+                <li><a href="#">Custom Sewing</a></li>
+                <li><a href="#">Event Styling</a></li>
+                <li><a href="#">Virtual Styling</a></li>
+                <li><a href="#">Wardrobe Makeover</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+        
+        <!-- Social Panel -->
+        <div class="slide-panel" id="socialPanel">
+            <button class="panel-close" onclick="closePanels()">&times;</button>
+            <h3 class="panel-title">Connect With Us</h3>
+            
+            <p style="color: #ccc; margin-bottom: 2rem;">
+                Follow us on social media for the latest updates, style tips, and exclusive offers.
+            </p>
+            
+            <div class="social-icons" style="justify-content: center; margin-bottom: 2rem;">
+                <a href="#" style="width: 60px; height: 60px;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="width: 60px; height: 60px;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="width: 60px; height: 60px;"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="width: 60px; height: 60px;"><i class="fab fa-pinterest"></i></a>
+                <a href="#" style="width: 60px; height: 60px;"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div style="background: rgba(212, 175, 55, 0.1); padding: 20px; border-radius: 4px; margin-top: 2rem;">
+                <h4 style="color: #d4af37; margin-bottom: 10px;">Newsletter Signup</h4>
+                <p style="color: #ccc; margin-bottom: 15px; font-size: 0.9rem;">
+                    Subscribe to our newsletter for exclusive style tips and special offers.
+                </p>
+                <div style="display: flex;">
+                    <input type="email" placeholder="Your email address" style="flex: 1; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(212,175,55,0.3); color: #fff;">
+                    <button style="background: #d4af37; color: #000; border: none; padding: 0 15px; cursor: pointer;">Join</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="overlay" id="overlay" onclick="closePanels()"></div>
+         <div class="copyright">
+                    Copyright ©2025 All rights reserved | MenzTailor
+                </div>
+    </section>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
