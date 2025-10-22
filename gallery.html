@@ -1,71 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — [DesignerName]</title>
-  <link rel="stylesheet" href="gallery.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-   
-    <!-- Header with Logo -->
-    <header class="site-header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">
-                <div class="logo-image">
-                    <!-- Replace with your actual logo image -->
-                    <img src="Assets/logo.jpeg" alt="MenzTailor Logo">
-                   
-                </div>
-                <div class="logo-text">
-                    NOHINE<span class="business-name">GH</span>
-                </div>
-            </a>
-            <nav class="nav" id="nav">
-                <a href="index.html">Home</a>
-                 <a href="about.html">About Us</a>
-                <a href="gallery.html">Gallery</a>
-                <div class="dropdown">
-                    <a href="services.html">Services</a>
-                    <div class="dropdown-content">
-                        <a href="contact.html">Personal Styling</a>
-                        <a href="contact.html">Event Styling</a>
-                        <a href="contact.html">Virtual Styling</a>
-                        <a href="contact.html">Wardrobe Makeover</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="btn">Book Styling</a>
-               
-            </nav>
-            <button id="nav-toggle" class="nav-toggle" aria-label="Menu">☰</button>
-        </div>
-    </header>
-
-
-
-  <!-- Modal for gallery -->
-  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
-    <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
-    <div class="modal-content">
-      <img id="modal-img" src="" alt="" />
-      <div class="modal-info">
-        <h3 id="modal-title"></h3>
-        <p id="modal-desc"></p>
-      </div>
-    </div>
-  </div>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
+  <title>Document</title>
   <link rel="stylesheet" href="gallery.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    <!-- Header with Logo -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-image">
+          <img src="Assets/logo.jpeg" alt="NONEHI GH Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='NG';">
+        </div>
+        <div class="logo-text">
+          NOHINE GH<span class="business-name"></span>
+        </div>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <div class="dropdown">
+          <a href="services.html">Services</a>
+          <div class="dropdown-content">
+            <a href="contact.html">Personal Styling</a>
+            <a href="contact.html">Event Styling</a>
+            <a href="contact.html">Virtual Styling</a>
+            <a href="contact.html">Wardrobe Makeover</a>
+          </div>
+        </div>
+        <a href="contact.html" class="btn">Book Styling</a>
+      </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </header>
 
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+               
+                <h1 class="hero-title">Redefine Your Style, Elevate Your Presence</h1>
+                <p class="hero-description">Discover our exclusive collection that blends timeless elegance with contemporary design. Crafted for those who dare to stand out and make a statement.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-shopping-bag"></i> Talk to a Stylist
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="hero-image"></div>
+        
+        
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">120+</div>
+                <div class="stat-label">Designers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2K+</div>
+                <div class="stat-label">Collections</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15K+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+        </div>
+    </section>
   <!-- Gallery Section -->
   <section class="gallery-section">
     <div class="gallery-header">
@@ -75,99 +82,203 @@
 
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="Assets/1.jpeg" alt="Gallery Image 1">
+        <img src="Assets/1.jpeg" alt="Fashion Design 1" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/WhatsApp Image 2025-10-17 at 15.27.11 (1).jpeg" alt="Gallery Image 2">
+        <img src="Assets/2.jpeg" alt="Fashion Design 2" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/dinner1.jpeg" alt="Gallery Image 3">
+        <img src="Assets/4.jpeg" alt="Fashion Design 3" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/churchoutfit.jpeg" alt="Gallery Image 4">
+        <img src="Assets/5.jpeg" alt="Fashion Design 4" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/corporate events.jpeg" alt="Gallery Image 5">
+        <img src="Assets/6.jpeg" alt="Fashion Design 5" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/dinnerdates.jpeg" alt="Gallery Image 6">
+        <img src="Assets/8.jpeg" alt="Fashion Design 6" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/hero3.jpeg" alt="Gallery Image 7">
+        <img src="Assets/full.jpeg" alt="Fashion Design 7" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="Assets/14.jpeg" alt="Gallery Image 8">
-      </div>
-<div class="gallery-item">
-        <img src="Assets/13.jpeg" alt="Gallery Image 8">
-      </div>
-<div class="gallery-item">
-        <img src="Assets/12.jpeg" alt="Gallery Image 8">
+        <img src="Assets/14.jpeg" alt="Fashion Design 8" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="Assets/11.jpeg" alt="Gallery Image 8">
+        <img src="Assets/13.jpeg" alt="Fashion Design 9" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="Assets/10.jpeg" alt="Gallery Image 8">
+        <img src="Assets/12.jpeg" alt="Fashion Design 10" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/kimonio2.jpeg" alt="Gallery Image 8">
+        <img src="Assets/11.jpeg" alt="Fashion Design 11" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/kimonio.jpeg" alt="Gallery Image 8">
+        <img src="Assets/10.jpeg" alt="Fashion Design 12" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/hero 1.jpeg" alt="Gallery Image 8">
+        <img src="Assets/weddins.jpeg" alt="Wedding Fashion" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/hero3.jpeg" alt="Gallery Image 8">
+        <img src="Assets/nice.jpeg" alt="Fashion Design 14" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/hero 2.jpeg" alt="Gallery Image 8">
+        <img src="Assets/hero 2.jpeg" alt="Fashion Design 15" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/footer.jpeg" alt="Gallery Image 8">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.30.43.jpeg" alt="Fashion Design 16" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/footerpic.jpeg" alt="Gallery Image 8">
+        <img src="Assets/car.jpeg" alt="Fashion Design 17" onerror="handleImageError(this)">
       </div>
       <div class="gallery-item">
-        <img src="assets/servicehero.jpeg" alt="Gallery Image 8">
+        <img src="Assets/16.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
       </div>
 
- <div class="gallery-item">
-        <img src="Assets/17.jpeg" alt="Gallery Image 8">
+<div class="gallery-item">
+        <img src="Assets/aby1.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
       </div>
-       <div class="gallery-item">
-        <img src="Assets/2.jpeg" alt="Gallery Image 8">
+
+<div class="gallery-item">
+        <img src="Assets/aby2.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
       </div>
-       <div class="gallery-item">
-        <img src="Assets/4.jpeg" alt="Gallery Image 8">
+
+<div class="gallery-item">
+        <img src="Assets/aby4.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
       </div>
-       <div class="gallery-item">
-        <img src="Assets/5.jpeg" alt="Gallery Image 8">
+
+<div class="gallery-item">
+        <img src="Assets/aby5.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
       </div>
+<div class="gallery-item">
+        <img src="Assets/aby6.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/aby7.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/aby8.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/aby11.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/17.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/aby12.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.30.45 (2).jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+      <div class="gallery-item">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.27.08.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.27.09 (1).jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.27.10 (1).jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.27.11 (1).jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/WhatsApp Image 2025-10-17 at 15.27.11 (2).jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client1.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client10.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client11.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client12.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client13.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client14.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client15.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client16.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client17.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client18.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client19.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client2.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+      <div class="gallery-item">
+        <img src="Assets/client22.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div><div class="gallery-item">
+        <img src="Assets/client21.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client23.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client4.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client5.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client6.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+<div class="gallery-item">
+        <img src="Assets/client7.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/clientabby.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+<div class="gallery-item">
+        <img src="Assets/client8.jpeg" alt="Fashion Design 18" onerror="handleImageError(this)">
+      </div>
+
+
+
+
+
     </div>
   </section>
+  
 
   <!-- Lightbox -->
-  <div class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="">
+  <div class="lightbox" id="lightbox">
+    <span class="close" id="lightbox-close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
   </div>
-
-  <script src="gallery.js"></script>
-</body>
-</html>
-
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div><strong>[DesignerName]</strong></div>
-      <div class="socials"><a href="#">Instagram</a></div>
+      <div><strong>NONEHI GH</strong></div>
+      <div class="socials"><a href="https://www.instagram.com/nonehi_gh?igsh=c2ZxbHoxZ3k1OGhj&utm_source=qr">Instagram</a></div>
     </div>
   </footer>
-
-  <script src="scripts/main.js"></script>
+   <script src="scripts/main.js"></script>
 </body>
 </html>

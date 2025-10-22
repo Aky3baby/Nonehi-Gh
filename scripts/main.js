@@ -20,83 +20,71 @@
 
 
 
-
-
-
-
-          document.addEventListener('DOMContentLoaded', function() {
-            const slider = document.querySelector('.slider');
-            const slides = document.querySelectorAll('.slide');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            const thumbnails = document.querySelectorAll('.thumbnail');
-            
-            let currentSlide = 0;
-            const totalSlides = slides.length;
-            
-            // Initialize slider position
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    // Initialize slider position
+    updateSlider();
+    
+    // Dot click navigation
+    dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+            currentSlide = parseInt(this.getAttribute('data-index'));
             updateSlider();
-            
-            // Next button click
-            nextBtn.addEventListener('click', function() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider();
-            });
-            
-            // Previous button click
-            prevBtn.addEventListener('click', function() {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlider();
-            });
-            
-            // Thumbnail click
-            thumbnails.forEach(thumbnail => {
-                thumbnail.addEventListener('click', function() {
-                    currentSlide = parseInt(this.getAttribute('data-index'));
-                    updateSlider();
-                });
-            });
-            
-            // Auto slide every 5 seconds
-            setInterval(function() {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider();
-            }, 5000);
-            
-            function updateSlider() {
-                // Update slider position
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
-                // Update active thumbnail
-                thumbnails.forEach(thumbnail => {
-                    thumbnail.classList.remove('active');
-                });
-                thumbnails[currentSlide].classList.add('active');
-            }
+            resetAutoSlide(); // Reset auto-slide when manually navigating
         });
-
-
-
-           // Gallery Filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                // Filter gallery items (simplified for demo)
-                // In a real implementation, you would filter based on data attributes
-                galleryItems.forEach(item => {
-                    item.style.display = 'block';
-                });
-            });
+    });
+    
+    // Auto slide every 5 seconds
+    let slideInterval = setInterval(function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }, 5000);
+    
+    function updateSlider() {
+        // Update slider position
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update active slide and dot
+        slides.forEach(slide => {
+            slide.classList.remove('active');
         });
+        slides[currentSlide].classList.add('active');
+        
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        dots[currentSlide].classList.add('active');
+    }
+    
+    function resetAutoSlide() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(function() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }, 5000);
+    }
+    
+    // Optional: Add keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        } else if (e.key === 'ArrowRight') {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+            resetAutoSlide();
+        }
+    });
+});
 
+          
         // Form Submission
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -228,6 +216,99 @@
             if (event.key === 'Escape') {
                 closePanels();
             }
+        });
+        
+        
+        
+        
+        // Lightbox implementation
+    function initLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxClose = document.getElementById('lightbox-close');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      
+
+         
+      // Lightbox functionality
+      initLightbox();
+      
+      // Check if lightbox elements exist
+      if (!lightbox || !lightboxImg || !lightboxClose) {
+        console.error('Lightbox elements not found');
+        return;
+      }
+      
+      // Open lightbox when gallery item is clicked
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const img = this.querySelector('img');
+          if (img && img.complete && img.naturalHeight !== 0) {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+          }
+        });
+      });
+      
+      // Close lightbox
+      lightboxClose.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      });
+      
+      // Close lightbox when clicking outside the image
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        if (e.key === 'Escape') {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Image error handling
+    function handleImageError(img) {
+      console.log('Image failed to load:', img.src);
+      img.style.display = 'none';
+      img.parentElement.style.background = 'linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)';
+      img.parentElement.style.display = 'flex';
+      img.parentElement.style.alignItems = 'center';
+      img.parentElement.style.justifyContent = 'center';
+      
+      const errorDiv = document.createElement('div');
+      errorDiv.innerHTML = `
+        <div style="text-align: center; color: #777;">
+          <p>Image not available</p>
+          <small>${img.alt}</small>
+        </div>
+      `;
+      
+      img.parentElement.appendChild(errorDiv);
+    }
+
+
+     // Simple animation for the hero text
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroText = document.querySelector('.hero-text');
+            heroText.style.opacity = '0';
+            heroText.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                heroText.style.transition = 'opacity 1s ease, transform 1s ease';
+                heroText.style.opacity = '1';
+                heroText.style.transform = 'translateY(0)';
+            }, 300);
         });
 
 
