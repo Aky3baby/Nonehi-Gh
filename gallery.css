@@ -48,7 +48,7 @@
       display: flex;
       align-items: center;
       text-decoration: none;
-      color: #fff;
+      color: #d4af37;
       font-family: 'Cinzel', serif;
       font-size: 1.8rem;
       font-weight: 600;
@@ -505,7 +505,7 @@
     
     .site-footer strong {
       font-size: 18px;
-      color: #fff;
+      color:#d4af37;
     }
     
     .socials a {

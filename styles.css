@@ -1,5 +1,5 @@
 :root{
-  --accent:#c05b82; /* warm gold accent */
+  --accent:#d4af37; /* warm gold accent */
   --bg:#ffffff;
   --muted:#666;
   --max-width:1100px;
@@ -32,7 +32,7 @@ body{
 
 /* Logo Styles */
 .logo {
-    color:  #d4af37; /* Pink color */
+    color:  #d4af37;
     font-size: 1.8rem;
     font-weight: bold;
     text-decoration: none;
@@ -63,7 +63,7 @@ body{
 }
 
 .nav a:hover {
-    color: #ff69b6;
+    color: #d4af37;
 }
 
 /* Book Styling Button */
