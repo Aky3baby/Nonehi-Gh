@@ -313,3 +313,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         
+/* JavaScript error handling function */
+
+function handleImageError(img) {
+    img.style.background = 'linear-gradient(135deg, #f5f5f5, #e0e0e0)';
+    img.style.display = 'flex';
+    img.style.alignItems = 'center';
+    img.style.justifyContent = 'center';
+    img.style.color = '#999';
+    img.style.fontSize = '14px';
+    img.style.fontStyle = 'italic';
+    img.alt = 'Image not available';
+    
+    // Create a text node for the error message
+    const errorText = document.createTextNode('Image not available');
+    img.parentNode.appendChild(errorText);
+}
+
+// Simple lightbox functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            const imgAlt = this.querySelector('img').alt;
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+                cursor: pointer;
+            `;
+            
+            const modalImg = document.createElement('img');
+            modalImg.src = imgSrc;
+            modalImg.alt = imgAlt;
+            modalImg.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 8px;
+            `;
+            
+            modal.appendChild(modalImg);
+            document.body.appendChild(modal);
+            
+            // Close modal on click
+            modal.addEventListener('click', function() {
+                document.body.removeChild(modal);
+            });
+        });
+    });
+});
+

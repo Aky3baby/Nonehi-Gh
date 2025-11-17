@@ -1055,7 +1055,7 @@ body{
 /* Hero Section */
 .hero {
   position: relative;
-  background: url('assets/hero\ 2.jpeg') center/cover no-repeat;
+  background: url('Assets/11.jpeg') center/cover no-repeat;
   height: 70vh;
   display: flex;
   justify-content: center;
